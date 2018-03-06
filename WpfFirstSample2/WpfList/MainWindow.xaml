@@ -1,0 +1,30 @@
+﻿<Window x:Class="WpfList.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfList"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid Margin="10">
+        <ListBox Name="TodoListBox" HorizontalAlignment="Left" Width="348" SelectionMode="Multiple" SelectionChanged="todoListBox_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding Title}"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>          
+        </ListBox>
+        <TextBlock HorizontalAlignment="Left" Margin="353,10,0,0" TextWrapping="Wrap" Text="ListBox Selection" VerticalAlignment="Top" Width="134"/>
+        <Button Name="btnShowSelectedItem" Content="Show selected" HorizontalAlignment="Left" Margin="353,31,0,0" VerticalAlignment="Top" Width="134" Click="btnShowSelectedItem_Click"/>
+        <Button Name="btnSelectLast" Content="Select Last" HorizontalAlignment="Left" Margin="353,56,0,0" VerticalAlignment="Top" Width="134" Click="btnSelectLast_Click"/>
+        <Button Name="btnSelectNext" Content="Select next" HorizontalAlignment="Left" Margin="353,81,0,0" VerticalAlignment="Top" Width="134" Click="btnSelectNext_Click"/>
+        <Button Name="btnSelectCSharp" Content="Select C#" HorizontalAlignment="Left" Margin="353,106,0,0" VerticalAlignment="Top" Width="134" Click="btnSelectCSharp_Click"/>
+        <Button Name ="btnSelectAll" Content="Select All" HorizontalAlignment="Left" Margin="353,131,0,0" VerticalAlignment="Top" Width="134" Click="btnSelectAll_Click"/>
+    </Grid>
+</Window>
